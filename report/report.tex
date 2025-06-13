@@ -56,16 +56,6 @@ pdfauthor = {Laura Just Fung (lj441)}
 \begin{document} 
 
 \maketitle
-\newpage
-\begin{abstract}
-\end{abstract}
-\newpage
-\listoffigures
-\newpage
-\listoftables
-\newpage
-\tableofcontents
-\newpage
 \section{Introduction}
 \label{sec:intro}
 Gravitational wave (GW) signals are produced when two high-mass objects merge. These GW signals then propogate unimpeded by gas nor dust, and are then detected by observatories such as Advanced LIGO \citep{LIGO2015} and Advanced Virgo \citep{Acernese_2014}. In addition to the waveform of the signal encoding information about the nature of the merger, the signal's amplitude also encodes information about the luminosity distance $D_L$ to the source, allowing it to act as a standard candle. 
@@ -76,58 +66,7 @@ Additionally, as GW sources are presumably located in galaxies, if the direction
 \label{sec:matched_filtering}
 One way to process and analyse GW data is through matched filtering. This technique assumes that the GW signal's true waveform is known, or at least a close enough approximation to it. Using the known waveform along with the antenna response in both the plus and cross polarisations as a template applied to the received data, the signal to noise ratio (SNR) is calculated across the signal. Essentially, the template is "slid" along the signal and the SNR calculated is how much of an "agreement" there is betwwen the template and the received data. Naturally, when there is perfect overlap between the true GW signal and the template, there is a large spike in SNR. Thus, time when the SNR spikes and the time that the GW signal coalesces in the data is the same. Using this coalescence time $t_c$ in each detector, the time differences of when each detector received the signal can be calculated. Then using the known locations of each interferometer as well as which directions they are more and less sensitive to, a direction the GW source can be determined. 
 
-As the antenna response from each interferometer depends on the assumed sky area the signal is originating from, the SNR for each interferometer H1, L1, and V1 was calculated in a grid of 1 $\mathrm{deg}^2} segments spanning the full sky area. It was assumed that the antenna response did not vary significantly over the considered time segment, 4 seconds from GPS time 1126259460.4 s. 
-    \includegraphics[width=\columnwidth, keepaspectratio]{../figures/pca_a_compare.png}
-    \caption{Unnormalised accuracy distribution of 1,000 random seeds for a default GBDT classifier operating upon the full dataset. Blue denotes the classifier with PCA components as input features and orange shows the results of the classifier with the original features as inputs.}
-    \label{fig:unbalanced}
-\end{figure}
-
-
-\begin{figure}%
-    \centering
-    \subfloat{{\includegraphics[width=0.9\columnwidth, keepaspectratio]{../figures/pca_a_compare.png}}}
-    \qquad
-    \subfloat{{\includegraphics[width=0.9\columnwidth, keepaspectratio]{../figures/pca_bc_compare.png}}}
-    \caption{Top: Unnormalised accuracy distribution of 1,000 random seeds for a default GBDT classifier operating upon the full dataset. Bottom: on the BC subset. Blue denotes the classifier with PCA components as input features and orange shows the results of the classifier with the original features as inputs. Grey identifies where the distributions overlap.}
-    \label{fig:pca_compare}
-\end{figure}
-
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{cccccc}
-    \texttt{learning\_rate} & 0.0001 & 0.001& 0.01 & 0.1 \\
-    \hline
-    \texttt{n\_estimators} & 100 & 150 & 200 & 500 \\
-    \hline
-    \texttt{max\_depth} & 3 & 5 & 7 & 10 & None \\
-    \hline
-    \texttt{max\_features} & \texttt{sqrt} & \texttt{log2} & None \\
-    \hline
-    \texttt{criterion} & \texttt{friedman\_mse} & \texttt{squared\_error} \\
-    \hline
-    \texttt{subsample} & 0.8 & 0.9 & 1.0\\
-    \end{tabular}
-    \caption{Hyperparameter values tested for GBDT classifiers during gridsearch, as defined by \texttt{sklearn} \citep{sklearn}.}
-    \label{tab:params}
-\end{table}
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{c|c|c|c}
-    & \multicolumn{3}{|c}{Classifier} \\
-    Hyperparameter & A & B & C \\
-    \hline
-    \texttt{learning\_rate} & 0.1 & 0.001 & 0.01 \\
-    \texttt{n\_estimators} & 150 & 500 & 500 \\
-    \texttt{max\_depth} & 3 & 7 & 3 \\
-    \texttt{max\_features} & \texttt{sqrt} & \texttt{sqrt} & \texttt{sqrt} \\
-    \texttt{criterion} & \texttt{squared\_error} & \texttt{friedman\_mse} & \texttt{friedman\_mse} \\
-    \texttt{subsample} & 0.8 & 0.8 & 0.8 \\
-    \end{tabular}
-    \caption{Best-performing tested hyperparameters for each GBDT classifier.}
-    \label{tab:hyperparameter}
-\end{table}
+As the antenna response from each interferometer depends on the assumed sky area the signal is originating from, the SNR for each interferometer H1, L1, and V1 was calculated in a grid of 1 $\mathrm{deg}^2$ segments spanning the full sky area. It was assumed that the antenna response did not vary significantly over the considered time segment, 4 seconds from GPS time 1126259460.4 s.
 
 \bibliographystyle{vancouver-authoryear}
 \bibliography{bibliography}
