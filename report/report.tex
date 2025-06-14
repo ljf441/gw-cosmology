@@ -1,0 +1,78 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{gentium}
+\usepackage{url}
+\usepackage{mathptmx} % Use Times Font
+% \usepackage{wordcount}
+\usepackage{pdflscape}
+\usepackage[pdftex]{graphicx} % Required for including pictures
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage[numbers]{natbib}
+\usepackage{amssymb} % Required for \mathbb
+\usepackage{amsmath} % Required for bmatrix environment
+\frenchspacing % No double spacing between sentences
+\linespread{1.2} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+%\usepackage{parskip}
+\usepackage{subfig}
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+\newcommand{\apjs}{ApJS}
+\newcommand{\apj}{ApJ}
+\newcommand{\apjl}{ApJ}
+\newcommand{\mnras}{MNRAS}
+\newcommand{\aap}{A\&A}
+\newcommand{\aj}{AJ}
+\newcommand{\nat}{Nature}
+\newcommand{\bain}{Bull.~Astron.~Inst.~Netherlands} 
+\newcommand{\araa}{ARA\&A}
+\newcommand{\icarus}{Icarus}
+\setlength{\tabcolsep}{4pt} 
+\renewcommand{\arraystretch}{1}
+
+%-----------------------
+% Set pdf information and add title, fill in the fields
+%-----------------------
+\hypersetup{ 	
+pdfsubject = {Cosmology with Gravitational Waves},
+pdftitle = {Cosmology with Gravitational Waves},
+pdfauthor = {Laura Just Fung (lj441)}
+}
+
+\title{Cosmology with Gravitational Waves}
+\author{Laura Just Fung (lj441)}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+%-----------------------
+% Begin document
+%-----------------------
+% \maketitle
+\begin{document} 
+
+\maketitle
+\section{Introduction}
+\label{sec:intro}
+Gravitational wave (GW) signals are produced when two high-mass objects merge. These GW signals then propogate unimpeded by gas nor dust, and are then detected by observatories such as Advanced LIGO \citep{LIGO2015} and Advanced Virgo \citep{Acernese_2014}. In addition to the waveform of the signal encoding information about the nature of the merger, the signal's amplitude also encodes information about the luminosity distance $D_L$ to the source, allowing it to act as a standard candle. 
+
+Additionally, as GW sources are presumably located in galaxies, if the direction to the source can be determined, it is possible to search galaxy catalogs for likely host candidates. As the redshift $z$ to these candidate galaxies are known, it is then possible to estimate the Hubble constant $H_0$. 
+
+\section{Matched Filtering}
+\label{sec:matched_filtering}
+One way to process and analyse GW data is through matched filtering. This technique assumes that the GW signal's true waveform is known, or at least a close enough approximation to it. Using the known waveform along with the antenna response in both the plus and cross polarisations as a template applied to the received data, the signal to noise ratio (SNR) is calculated across the signal. Essentially, the template is "slid" along the signal and the SNR calculated is how much of an "agreement" there is betwwen the template and the received data. Naturally, when there is perfect overlap between the true GW signal and the template, there is a large spike in SNR. Thus, time when the SNR spikes and the time that the GW signal coalesces in the data is the same. Using this coalescence time $t_c$ in each detector, the time differences of when each detector received the signal can be calculated. Then using the known locations of each interferometer as well as which directions they are more and less sensitive to, a direction the GW source can be determined. 
+
+As the antenna response from each interferometer depends on the assumed sky area the signal is originating from, the SNR for each interferometer H1, L1, and V1 was calculated in a grid of 1 $\mathrm{deg}^2$ segments spanning the full sky area. It was assumed that the antenna response did not vary significantly over the considered time segment, 4 seconds from GPS time 1126259460.4 s.
+
+\bibliographystyle{vancouver-authoryear}
+\bibliography{bibliography}
+\appendix
+\section{Use of auto-generation tools}
+Auto-generation tools were used to help parse error messages throughout the project, and to help format this \LaTeX\ report.
+
+Auto-generation tools were not used elsewhere, for code generation, writing, or otherwise.
+\end{document}
