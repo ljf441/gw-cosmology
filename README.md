@@ -33,6 +33,8 @@ The Docker image contains:
     - This folder contains the original data.
 4. `figures` folder:
     - Empty. This is to have a place to save figures to when running the notebooks.
+5. `output` folder:
+    - Empty. This is to have a place to save output files to when running the notebooks.
   
 # how to run without Docker
 This project may also be run outside of a Docker environment. To install the necessary packages, please run:
