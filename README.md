@@ -24,11 +24,11 @@ http://127.0.0.1:8888/?token=<token>
 ## within the Docker image
 The Docker image contains:
 1. `matched_filtering.ipynb`:
-    - This containins the code to Part 1 of the coursework.
+    - This contains the code to Part 1 of the coursework.
 2. `bayesian.ipynb`:
-    - This containins the code to Part 2 of the coursework.
+    - This contains the code to Part 2 of the coursework.
 3. `cosmology.ipynb`:
-    - This containins the code to Part 3 of the coursework.
+    - This contains the code to Part 3 of the coursework.
 3. `data` folder:
     - This folder contains the original data.
 4. `figures` folder:
