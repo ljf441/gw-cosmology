@@ -16,6 +16,8 @@ RUN pip install jupyter
 
 COPY matched_filtering.ipynb bayesian.ipynb cosmology.ipynb .
 
+COPY data/ data/
+
 EXPOSE 8888
 
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--allow-root", "--notebook-dir=/app"]
