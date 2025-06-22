@@ -61,11 +61,11 @@ pdfauthor = {Laura Just Fung (lj441)}
     \\
     June 22, 2025
     \\
-    Word count: 2142
+    Word count: 2404
 \end{center}
 \section{Introduction}
 \label{sec:intro}
-Gravitational wave (GW) signals are produced when two high-mass objects merge. These GW signals then propogate unimpeded by neither gas nor dust, and are then detected by observatories such as Advanced LIGO \citep{LIGO2015} and Advanced Virgo \citep{Acernese_2014}. In addition to the waveform of the signal encoding information about the nature of the merger, the signal's amplitude also encodes information about the luminosity distance $D_L$ to the source, allowing it to act as a standard candle.
+Gravitational wave (GW) signals propogate unimpeded by neither gas nor dust, and are then detected by interferometers such as Advanced LIGO \citep{LIGO2015} and Advanced Virgo \citep{Acernese_2014}. In addition to the waveform of the signal encoding information about the nature of the source, the signal's amplitude also encodes information about the luminosity distance $D_L$ to the source, allowing it to act as a standard candle.
 
 Additionally, as GW sources are presumably located in galaxies, if the direction to the source can be determined, it is possible to search galaxy catalogs for likely host candidates. As the redshift $z$ to these candidate galaxies are known, it is then possible to estimate the Hubble constant $H_0$ from the luminosity distance $D_L$ and redshift $z$.
 
@@ -133,7 +133,9 @@ Using the relative time delays and their uncertainties, as well as the known loc
 
 where $D^i$ is the delay map for each interferometer pair, $t_d^i$ is the calculated time delay for each interferometer pair, and $\sigma^i$ is the uncertainty on the time delay for each interferometer pair. The resulting map for the HL pair is shown in Fig.~\ref{fig:skymap_hl_mf}. As seen in the figure, the likely sky area of the GW source is quite large and uncertain, covering 8472.82 $\mathrm{deg}^2$, or about 20.54\% of the sky. 
 
-When including the Virgo V1 interferometer and thus the HV and VL pairs, the uncertainty on the sky area is reduced to 0.85\% of the sky, or 351.39 $\mathrm{deg}^2$. The resulting sky map showing all three interferometer pair likely areas are shown in Fig.~\ref{fig:skymap_hlv_mf}. The reduction in likely sky area and thus improvement of the localization of the GW source due to the inclusion of the Virgo V1 interferometer is 95.85\%. This improvement is because as V1 is located in Italy while H1 and L1 are located in the United States, the differences in signal arrival times allows for better triangulation of the GW source location.
+When including the Virgo V1 interferometer and thus the HV and VL pairs, the uncertainty on the sky area is reduced to 0.85\% of the sky, or 351.39 $\mathrm{deg}^2$. The resulting sky map showing all three interferometer pair likely areas are shown in Fig.~\ref{fig:skymap_hlv_mf}. As seen in in the top plot of Fig.~\ref{fig:skymap_hlv_mf}, the masks of the three interferometer pairs of HL (blue), HV (green), and VL (yellow) overlap in a small area, shown in red. This area is the intersection of the three masks and is where the GW source is most likely located in the sky. The bottom plot shows the combined probability sky map for all three interferometer pairs, which indicates the same sky area as the intersection of the three masks.
+
+The reduction in likely sky area and thus improvement of the localization of the GW source due to the inclusion of the Virgo V1 interferometer is 95.85\%. This improvement is because as V1 is located in Italy while H1 and L1 are located in the United States, the differences in signal arrival times allows for better triangulation of the GW source location. The improvements in localisation over all methods are shown in Table~\ref{tab:areas} in Section~\ref{sec:bayesian}.
 
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/detector_skymap_HL.png}
@@ -163,9 +165,9 @@ Using the \texttt{bilby} library's functions to calculate the time delays betwee
     \label{eq:blikelihood}
 \end{equation}    
 
-where $\vec{\theta}$ represents the parameters $(\alpha, \delta, \psi, t_c, D_L)$, $h_{\text{obs}}(f)$ is the observed data in the frequency domain, $F_+$ and $F_\times$ are the plus and cross antenna reponses for each interferometer, $h_+(f)$ and $h_\times(f)$ are the plus and cross polarisations of the GW signal in the frequency domain, $\Delta t$ is the time delay between the interferometer and the geocenter for each interferometer, and $\text{ASD}(f)$ is the amplitude spectral density for the signal received in each interferometer. 
+where $\vec{\theta}$ represents the parameters $(\alpha, \delta, \psi, t_c^{geo}, D_L)$, $h_{\text{obs}}(f)$ is the observed data in the frequency domain, $F_+$ and $F_\times$ are the plus and cross antenna reponses for each interferometer, $h_+(f)$ and $h_\times(f)$ are the plus and cross polarisations of the GW signal in the frequency domain, $\Delta t$ is the time delay between the interferometer and the geocenter for each interferometer, and $\text{ASD}(f)$ is the amplitude spectral density for the signal received in each interferometer. 
 
-The priors used for the analysis were chosen to be uniform for RA, solid angle (Dec), coalescence time, and polarisation angle while log-uniform over luminosity distance. Their ranges are shown in Table~\ref{tab:priors}.
+The priors used for the analysis were chosen to be uniform for RA $\alpha$, solid angle (Dec $\delta$), geocentric coalescence time $t_c^{geo}$, and polarisation angle $\psi$ while log-uniform over luminosity distance. Their ranges are shown in Table~\ref{tab:priors}. The reason why uniform priors were chosen for RA, Dec, polarisation angle and the geocentric coalescence time is because no prior knowledge is assumed for these parameters. Accordingly, RA is assumed to be uniformly distributed over the full range of $[0, 2\pi]$ radians, Dec is assumed to be uniformly distributed over the solid angle, and polarisation angle is assumed to be uniformly distributed over the full range of $[0, 2\pi]$ radians. The geocentric coalescence time is assumed to be uniformly distributed over the full time segment [1126259460.4s, 1126259464.4s]. The log-uniform prior for the luminosity distance was chosen to allow for a wide range of distances within the range [$10^{-4}$ Gpc, $10^5$ Gpc] to be considered as the luminosity distance may vary widely depending on the source.
 
 \begin{table}[h]
     \centering
@@ -197,7 +199,7 @@ The median location of the source is at RA = $2.477^{+0.164}_{-0.510}$ rad and D
     \label{fig:sky_hl}
 \end{figure}
 
-Fig.~\ref{fig:hl_compare} compares the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. It is clear that the Bayesian inference method provides a much more precise localization of the GW source, with the resampled posterior distribution enclosing only 0.23\% of the sky, or 93.16 $\mathrm{deg}^2$.
+Fig.~\ref{fig:hl_compare} compares the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. It is clear that the Bayesian inference method provides a much more precise localization of the GW source, with the resampled posterior distribution enclosing only 0.23\% of the sky, or 93.16 $\mathrm{deg}^2$. Rather than the likely area stretching over nearly the entire right-hand side of the sky, the posterior distribution is much more constrained in the Dec distribution with the RA distribution being being only slightly more constrained.
 
 \begin{landscape}
 \begin{figure}
@@ -210,7 +212,7 @@ Fig.~\ref{fig:hl_compare} compares the posterior distribution of the RA and Dec 
 \clearpage
 Including the Virgo V1 interferometer in the Bayesian inference method, the corner plot of the posterior distributions is shown in Fig.~\ref{fig:posterior_hlv}. The Mollweide projected RA and Dec posteriors of the resampled distribution are in Fig.~\ref{fig:sky_hlv}. The 1D marginalised distribution of the luminosity distance $D_L$ is shown in Fig.~\ref{fig:luminosity_distance}. The median luminosity distance is $1.02 \pm 0.03$ Gpc, which is consistent with the HL interferometer pair result. Fig.~\ref{fig:hlv_compare} compares the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. 
 
-The resampled posterior distribution encloses only 0.01\% of the sky, or 5.04 $\mathrm{deg}^2$. Thus, including the Virgo V1 interferometer in the analysis provides a significant improvement in the localization of the GW source, with an improvement of 98.75\% over the HL interferometer pair matched filtering method.
+The resampled posterior distribution encloses only 0.01\% of the sky, or 5.04 $\mathrm{deg}^2$. Thus, including the Virgo V1 interferometer in the analysis provides a significant improvement in the localization of the GW source, with an improvement of 98.75\% over the HL interferometer pair matched filtering method. Comparing the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the HLV matched filtering method, the posterior distribution is roughly located at similar RA coordinates. The original matched filtering method could not distinguish between equally two equally likely sky areas above and below the celestial equator, while the posterior distribution from the Bayesian inference method is much more constrained in the Dec distribution, with the posterior distribution being located in the southern hemisphere. The median location of the source is at RA = $2.32^{+0.05}_{-0.04}$ rad and Dec = $-1.20^{+0.02}_{-0.02}$ rad.
 
 Table~\ref{tab:areas} summarises the sky areas for the matched filtering and Bayesian inference methods for both the HL and HLV interferometer pairs. Table~\ref{tab:params} summarises the median and 1$\sigma$ uncertainties for the parameters obtained from the Bayesian inference method for both the HL and HLV interferometer pairs.
 
@@ -274,7 +276,7 @@ Table~\ref{tab:areas} summarises the sky areas for the matched filtering and Bay
 \label{sec:cosmology}
 With the median RA and Dec coordinates of the GW source as well as the median luminosity distance $D_L$, it is possible to estimate the Hubble constant $H_0$ using the known redshift $z$ of the host galaxy. 
 
-First, the host galaxy is identified by cross-matching the GW source coordinates with a galaxy catalog, using the 90\% credible region of the 2D RA and Dec posterior distribution as the search area. The galaxies matched using this method are shown in Fig.~\ref{fig:matched_galaxies} and Table~\ref{tab:galaxies}.
+First, the host galaxy is identified by cross-matching the GW source coordinates with a galaxy catalog, using the 90\% credible region of the 2D RA and Dec posterior distribution as the search area. This was done by using a Gaussian kernel density estimation function to estimate the joint posterior distribution between RA and Dec. This distribution is then evaluated over a RA and Dec grid to get a density map over the full sky area. The density values were then sorted cumulatively and the 90\% credible region was selected. The galaxies in the catalog whose coordinates fall within this 90\% credible region were then selected as potential host galaxies. The galaxies matched using this method are shown in Fig.~\ref{fig:matched_galaxies} and Table~\ref{tab:galaxies}.
 
 \begin{figure}[h]
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/kde_crossmatch.png}
