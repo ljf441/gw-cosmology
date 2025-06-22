@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.5.30)  22 JUN 2025 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.5.30)  22 JUN 2025 23:49
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -629,13 +629,13 @@ Overfull \hbox (10.00119pt too wide) in paragraph at lines 127--128
 r pairs us-ing the \T1/cmtt/m/n/10.95 time_delay_from_geocenter
  []
 
-<../figures/detector_skymap_HL.png, id=79, 750.4035pt x 527.571pt>
+<../figures/detector_skymap_HL.png, id=81, 750.4035pt x 527.571pt>
 File: ../figures/detector_skymap_HL.png Graphic file (type png)
 <use ../figures/detector_skymap_HL.png>
 Package pdftex.def Info: ../figures/detector_skymap_HL.png  used on input line 
 141.
 (pdftex.def)             Requested size: 398.4237pt x 280.11845pt.
-<../figures/detector_skymap_intersection.png, id=80, 625.3764pt x 782.4432pt>
+<../figures/detector_skymap_intersection.png, id=82, 625.3764pt x 782.4432pt>
 File: ../figures/detector_skymap_intersection.png Graphic file (type png)
 <use ../figures/detector_skymap_intersection.png>
 Package pdftex.def Info: ../figures/detector_skymap_intersection.png  used on i
@@ -648,12 +648,12 @@ ection.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../figures/corner_HL.png, id=107, 842.9091pt x 864.831pt>
+<../figures/corner_HL.png, id=109, 842.9091pt x 864.831pt>
 File: ../figures/corner_HL.png Graphic file (type png)
 <use ../figures/corner_HL.png>
 Package pdftex.def Info: ../figures/corner_HL.png  used on input line 191.
 (pdftex.def)             Requested size: 398.4237pt x 408.77997pt.
-<../figures/posterior_map_HL.png, id=108, 714.2685pt x 359.1819pt>
+<../figures/posterior_map_HL.png, id=110, 714.2685pt x 359.1819pt>
 File: ../figures/posterior_map_HL.png Graphic file (type png)
 <use ../figures/posterior_map_HL.png>
 Package pdftex.def Info: ../figures/posterior_map_HL.png  used on input line 19
@@ -662,7 +662,7 @@ Package pdftex.def Info: ../figures/posterior_map_HL.png  used on input line 19
 [7
 
 ] [8 <../figures/corner_HL.png>] [9 <../figures/posterior_map_HL.png>]
-<../figures/radec_posterior_HL.png, id=134, 1808.4363pt x 605.1408pt>
+<../figures/radec_posterior_HL.png, id=136, 1808.4363pt x 605.1408pt>
 File: ../figures/radec_posterior_HL.png Graphic file (type png)
 <use ../figures/radec_posterior_HL.png>
 Package pdftex.def Info: ../figures/radec_posterior_HL.png  used on input line 
@@ -670,12 +670,12 @@ Package pdftex.def Info: ../figures/radec_posterior_HL.png  used on input line
 (pdftex.def)             Requested size: 657.27872pt x 219.93733pt.
 
 [10 <../figures/radec_posterior_HL.png>]
-<../figures/corner_HLV.png, id=146, 845.3181pt x 864.831pt>
+<../figures/corner_HLV.png, id=148, 845.3181pt x 864.831pt>
 File: ../figures/corner_HLV.png Graphic file (type png)
 <use ../figures/corner_HLV.png>
 Package pdftex.def Info: ../figures/corner_HLV.png  used on input line 220.
 (pdftex.def)             Requested size: 398.4237pt x 407.6187pt.
-<../figures/posterior_map_HLV.png, id=147, 714.2685pt x 352.6776pt>
+<../figures/posterior_map_HLV.png, id=149, 714.2685pt x 352.6776pt>
 File: ../figures/posterior_map_HLV.png Graphic file (type png)
 <use ../figures/posterior_map_HLV.png>
 Package pdftex.def Info: ../figures/posterior_map_HLV.png  used on input line 2
@@ -687,14 +687,14 @@ Package pdftex.def Info: ../figures/posterior_map_HLV.png  used on input line 2
 
 ] [12 <../figures/corner_HLV.png>]
 [13 <../figures/posterior_map_HLV.png>]
-<../figures/radec_posterior_HLV.png, id=168, 1808.4363pt x 605.1408pt>
+<../figures/radec_posterior_HLV.png, id=170, 1808.4363pt x 605.1408pt>
 File: ../figures/radec_posterior_HLV.png Graphic file (type png)
 <use ../figures/radec_posterior_HLV.png>
 Package pdftex.def Info: ../figures/radec_posterior_HLV.png  used on input line
  233.
 (pdftex.def)             Requested size: 657.27872pt x 219.93733pt.
  [14 <../figures/radec_posterior_HLV.png>]
-<../figures/dl_posterior.png, id=174, 1226.6628pt x 502.7583pt>
+<../figures/dl_posterior.png, id=176, 1226.6628pt x 502.7583pt>
 File: ../figures/dl_posterior.png Graphic file (type png)
 <use ../figures/dl_posterior.png>
 Package pdftex.def Info: ../figures/dl_posterior.png  used on input line 240.
@@ -707,7 +707,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
  <../figures/dl_posterior.png>] [16]
-<../figures/kde_crossmatch.png, id=186, 1714.2444pt x 729.927pt>
+<../figures/kde_crossmatch.png, id=188, 1714.2444pt x 729.927pt>
 File: ../figures/kde_crossmatch.png Graphic file (type png)
 <use ../figures/kde_crossmatch.png>
 Package pdftex.def Info: ../figures/kde_crossmatch.png  used on input line 282.
@@ -750,10 +750,10 @@ type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol
 /usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (20 pages, 6383332 bytes).
+Output written on report.pdf (20 pages, 6383462 bytes).
 PDF statistics:
- 326 PDF objects out of 1000 (max. 8388607)
- 224 compressed objects within 3 object streams
+ 328 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
  55 named destinations out of 1000 (max. 500000)
  47224 words of extra memory for PDF output out of 51595 (max. 10000000)
 
