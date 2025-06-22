@@ -3,10 +3,11 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: report.aux
 The style file: vancouver-authoryear.bst
 Database file #1: bibliography.bib
+Warning--I didn't find a database entry for "Acernese"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 You've used 2 entries,
             3142 wiz_defined-function locations,
-            690 strings with 19546 characters,
+            692 strings with 19562 characters,
 and the built_in function-call counts, 148465 in all, are:
 = -- 16568
 > -- 1928
@@ -45,3 +46,4 @@ warning$ -- 0
 while$ -- 28
 width$ -- 0
 write$ -- 35
+(There was 1 warning)
