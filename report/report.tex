@@ -86,7 +86,7 @@ As the antenna response from each interferometer depends on the assumed sky area
     Dec ($\delta$, rad) & -1.05 \\
     Polarisation angle ($\psi$, rad) & 0.06 \\
     \end{tabular}
-    \caption{Point estimates of the RA, Dec, and polarisation angle $\psi$ parameters for the GW source. The RA and Dec are in radians.}
+    \caption{Point estimates of the RA, Dec, and polarisation angle $\psi$ parameters for the GW source. The RA, Dec, and polarisation angle parameters are in radians.}
     \label{tab:point_estimate}
 \end{table}
 
@@ -204,7 +204,7 @@ Fig.~\ref{fig:hl_compare} compares the posterior distribution of the RA and Dec 
 \begin{landscape}
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/radec_posterior_HL.png}
-    \caption{Left: RA and Dec posterior distribution from the Bayesian inference method with 1D marginalisations of the RA and Dec coordinates. The shaded area (purple) indicates the 68\% credible interval while the dotted lines indicate the median of both the RA and Dec distributions. Right: Comparison of the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. The grey contour shows the matched filtering enclosed area while the orange scatter points show the posterior distribution from the Bayesian inference method. The blue star indicates the median location of the source.}
+    \caption{Left: RA and Dec posterior distribution from the Bayesian inference method with 1D marginalisations of the RA and Dec coordinates using the HL interferometer pair only. The shaded area (purple) indicates the 68\% credible interval while the dotted lines indicate the median of both the RA and Dec distributions. Right: Comparison of the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. The grey contour shows the matched filtering enclosed area while the orange scatter points show the posterior distribution from the Bayesian inference method. The blue star indicates the median location of the source.}
     \label{fig:hl_compare}
 \end{figure}
 \end{landscape}
@@ -224,14 +224,14 @@ Table~\ref{tab:areas} summarises the sky areas for the matched filtering and Bay
 
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/posterior_map_HLV.png}
-    \caption{Mollweide projection of the sky showing the normalised posterior distribution for the HL and V1 interferometer pair. The color scale shows the probability density of the GW source being in each sky area. The red dot indicates the median position of the source.}
+    \caption{Mollweide projection of the sky showing the normalised posterior distribution for the HLV interferometer pairs. The color scale shows the probability density of the GW source being in each sky area. The red dot indicates the median position of the source.}
     \label{fig:sky_hlv}
 \end{figure}
 
 \begin{landscape}
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/radec_posterior_HLV.png}
-    \caption{Left: RA and Dec posterior distribution from the Bayesian inference method with 1D marginalisations of the RA and Dec coordinates. The shaded area (purple) indicates the 68\% credible interval while the dotted lines indicate the median of both the RA and Dec distributions. Right: Comparison of the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. The grey contour shows the matched filtering enclosed area while the orange scatter points show the posterior distribution from the Bayesian inference method. The blue star indicates the median location of the source.}
+    \caption{Left: RA and Dec posterior distribution from the Bayesian inference method with 1D marginalisations of the RA and Dec coordinates using all 3 interferometer pairs. The shaded area (purple) indicates the 68\% credible interval while the dotted lines indicate the median of both the RA and Dec distributions. Right: Comparison of the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. The grey contour shows the matched filtering enclosed area while the orange scatter points show the posterior distribution from the Bayesian inference method. The blue star indicates the median location of the source.}
     \label{fig:hlv_compare}
 \end{figure}
 \end{landscape}
@@ -280,7 +280,7 @@ First, the host galaxy is identified by cross-matching the GW source coordinates
 
 \begin{figure}[h]
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/kde_crossmatch.png}
-    \caption{Left: HL interferometer pair RA and Dec posterior distribution (red) overplotted on catalog distribution of galaxies (grey). The cross-matched galaxies are shown in blue. Right: HLV interferometer pairs RA and Dec posterior distribution (red) overplotted on catalog distribution of galaxies (grey). The cross-matched galaxies are shown in blue. Also shown is a zoomed-in inset of the posterior distribution and cross-matched galaxy in the top right-hand corner.}
+    \caption{Left: RA and Dec posterior distribution (red) overplotted on catalog distribution of galaxies (grey) using only the HL interferometer pair. The cross-matched galaxies are shown in blue. Right: RA and Dec posterior distribution (red) overplotted on catalog distribution of galaxies (grey) including the V1 interferometer as well. The cross-matched galaxies are shown in blue. Also shown is a zoomed-in inset of the posterior distribution and cross-matched galaxy in the top right-hand corner.}
     \label{fig:matched_galaxies}
 \end{figure}
 
@@ -302,7 +302,7 @@ First, the host galaxy is identified by cross-matching the GW source coordinates
     \label{tab:galaxies}
 \end{table}
 
-As only one galaxy was matched for the H1 \& L1 \& V1 interferometer pair, there was no need to rank the galaxies by likelihood of being the host galaxy. Assuming that MGC+JN7U119 is the host galaxy, the redshift $z$ of the host galaxy is 0.226. Using this redshift as well as the median luminosity distance $D_L = 1.02 \pm 0.03$ Gpc from the H1 \& L1 \& V1 Bayesian inference method, the Hubble constant $H_0$ (km/s/Mpc)can be estimated using the following Eq.~\ref{eq:hubble}:
+As only one galaxy was matched using the HLV posterior distribution, there was no need to rank the galaxies by likelihood of being the host galaxy. Assuming that MGC+JN7U119 is the host galaxy, the redshift $z$ of the host galaxy is 0.226. Using this redshift as well as the median luminosity distance $D_L = 1.02 \pm 0.03$ Gpc from the HLV Bayesian inference method, the Hubble constant $H_0$ (km/s/Mpc)can be estimated using the following Eq.~\ref{eq:hubble}:
 
 \begin{equation}
     H_0 = \frac{c}{D_L}{z},
@@ -334,7 +334,7 @@ which results in a Hubble constant $H_0=77.90^{+2.74}_{-2.50}$ km/s/Mpc. Both re
 \label{sec:conclusion}
 In conclusion, matched filtering and Bayesian inference can be used to characterise the GW source depending on which interferometers are used and how many are used. The choice of interferometers is important because their geographic locations and configurations impact the recorded coalescence times as well as which sky sensitivity patterns. This then allows for tighter constraints on the GW source location as well as the luminosity distance, polarisation angle, and geocentric coalescence time. 
 
-Additionally, Bayesian inference, while slower, tends to be able to constrain the GW source location parameters more effectively than matched filtering, even with fewer interferometers used. This is because the goal of matched filtering is to detect a GW signal in the data with use of a known template which is modulated by the antenna response of the interferometers. The modified template that maximises the SNR is the best match, with the assumption that the original template was a good approximation of the true GW signal and the RA, Dec, and $\psi$ parameters given to the antenna response function are close to the true values. This best match gives the coalescence time $t_c$ for each interferometer, which is then used to calculate the time delays between the interferometers and the geocenter. The time delays are then used to create a sky map of the likely area the GW source is located in. However, the matched filtering method cannot constrain the luminosity distance $D_L$ and geocentric coalescence time $t_c^{geo}$ parameters and only provides point estimates for $\alpha, \delta$ and $\psi$. In contrast, Bayesian inference uses the likelihood function shown in Eq.~\ref{eq:blikelihood} to calculate the posterior distributions over all the parameters. This allows for all the parameters to be constrained simultaneously, especially with the addition of the Virgo V1 interferometer.
+Additionally, Bayesian inference, while slower and more computationally intensive, tends to be able to constrain the GW source location parameters more effectively than matched filtering, even with fewer interferometers used. This is because the goal of matched filtering is to detect a GW signal in the data with use of a known template which is modulated by the antenna response of the interferometers. The modified template that maximises the SNR is the best match, with the assumption that the original template was a good approximation of the true GW signal and the RA, Dec, and $\psi$ parameters given to the antenna response function are close to the true values. This best match gives the coalescence time $t_c$ for each interferometer, which is then used to calculate the time delays between the interferometers and the geocenter. The time delays are then used to create a sky map of the likely area the GW source is located in. However, the matched filtering method cannot constrain the luminosity distance $D_L$ and geocentric coalescence time $t_c^{geo}$ parameters and only provides point estimates for $\alpha, \delta$ and $\psi$. In contrast, Bayesian inference uses the likelihood function shown in Eq.~\ref{eq:blikelihood} to calculate the posterior distributions over all the parameters. This allows for all the parameters to be constrained simultaneously, especially with the addition of the Virgo V1 interferometer.
 
 The results of the analysis show that the GW signal, when considering all three interferometers, is likely located at ($2.32^{+0.05}_{-0.04}$, $-1.20^{+0.02}_{-0.02}$) in host galaxy MGC+JN7U119 with a luminosity distance of $1.02 \pm 0.03$ Gpc. This host galaxy has a redshift at a redshift of 0.226, which allows to estimate the Hubble constant to be $H_0=66.74^{+2.35}_{-2.14}$ km/s/Mpc using the Hubble Law $H_0=v/D_L$ shown in Eq.~\ref{eq:hubble}, where $v\simeq cz$. The Hubble constant can also be estimated to be $H_0=77.90^{+2.74}_{-2.50}$ km/s/Mpc by inverting Eq.~\ref{eq:hubble2}.
 
