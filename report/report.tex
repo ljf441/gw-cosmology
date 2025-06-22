@@ -65,17 +65,30 @@ pdfauthor = {Laura Just Fung (lj441)}
 \end{center}
 \section{Introduction}
 \label{sec:intro}
-Gravitational wave (GW) signals are produced when two high-mass objects merge. These GW signals then propogate unimpeded by gas nor dust, and are then detected by observatories such as Advanced LIGO \citep{LIGO2015} and Advanced Virgo \citep{Acernese_2014}. In addition to the waveform of the signal encoding information about the nature of the merger, the signal's amplitude also encodes information about the luminosity distance $D_L$ to the source, allowing it to act as a standard candle. 
+Gravitational wave (GW) signals are produced when two high-mass objects merge. These GW signals then propogate unimpeded by neither gas nor dust, and are then detected by observatories such as Advanced LIGO \citep{LIGO2015} and Advanced Virgo \citep{Acernese_2014}. In addition to the waveform of the signal encoding information about the nature of the merger, the signal's amplitude also encodes information about the luminosity distance $D_L$ to the source, allowing it to act as a standard candle.
 
-Additionally, as GW sources are presumably located in galaxies, if the direction to the source can be determined, it is possible to search galaxy catalogs for likely host candidates. As the redshift $z$ to these candidate galaxies are known, it is then possible to estimate the Hubble constant $H_0$. 
+Additionally, as GW sources are presumably located in galaxies, if the direction to the source can be determined, it is possible to search galaxy catalogs for likely host candidates. As the redshift $z$ to these candidate galaxies are known, it is then possible to estimate the Hubble constant $H_0$ from the luminosity distance $D_L$ and redshift $z$.
 
 \section{Matched filtering}
 \label{sec:matched_filtering}
 \subsection{Coalescence time}
 \label{sec:tc}
-One way to process and analyse GW data is through matched filtering. This technique assumes that the GW signal's true waveform is known, or at least a close enough approximation to it. Using the known waveform along with the antenna response in both the plus and cross polarisations as a template applied to the received data, the signal to noise ratio (SNR) is calculated across the signal. Essentially, the template is "slid" along the signal and the SNR calculated is how much of an "agreement" there is betwwen the template and the received data. Naturally, when there is perfect overlap between the true GW signal and the template, there is a large spike in SNR. Thus, time when the SNR spikes and the time that the GW signal coalesces in the data is the same. Using this coalescence time $t_c$ in each detector, the time differences of when each detector received the signal can be calculated. Then using the known locations of each interferometer as well as which directions they are more and less sensitive to, a direction the GW source can be determined. 
+One way to process and analyse GW data is through matched filtering. This technique assumes that the GW signal's true waveform is known, or at least a close enough approximation to it. Using the known waveform along with the antenna response in both the plus and cross polarisations as a template applied to the received data, the signal to noise ratio (SNR) is calculated across the signal. Essentially, the template is "slid" along the signal and the SNR calculated is how much of a correlation there is between the template and the data. Naturally, when there is perfect overlap between the true GW signal and the template, there is a large spike in SNR. Thus, the time when the SNR spikes and the time that the GW signal coalesces in the data is the same. Using this coalescence time $t_c$ measured in each detector, the time differences of when each detector received the signal can be calculated. Then using the known locations of each interferometer as well as which directions they are more and less sensitive to, a direction the GW source can be determined. 
 
-As the antenna response from each interferometer depends on the assumed sky area the signal is originating from, the SNR for each interferometer H1, L1, and V1 was calculated in a grid of 10 $\mathrm{deg}^2$ segments spanning the full sky area. It was assumed that the antenna response did not vary significantly over the considered time segment, 4 seconds from GPS time 1126259460.4 s, thus the antenna response was calculated at the midpoint time of the segment for each interferometer. The SNR was then calculated for each interferometer in each segment, and the maximum SNR across all interferometers was used to determine the most likely sky area the signal originated from. The full-width half-maximum (FWHM) of the SNR distribution was then used to determine the uncertainty on the coalescence times $t_c$ for each interferometer, shown in Table~\ref{tab:tcs}. The SNR distributions for each interferometer are shown in Fig.~\ref{fig:snr_distributions}.
+As the antenna response from each interferometer depends on the assumed sky area the signal is originating from, the SNR for each interferometer H1, L1, and V1 was calculated in a grid of 10 $\mathrm{deg}^2$ segments spanning the full sky area. It was assumed that the antenna response did not vary significantly over the considered time segment, 4 seconds from GPS time 1126259460.4s, thus the antenna response was calculated at the midpoint time of the segment for each interferometer. The SNR was then calculated for each interferometer in each segment, and the maximum SNR across all interferometers was used to determine the most likely sky area the signal originated from. The point estimates of the RA and Dec coordinates as well as the $\psi$ parameter is shown in Table~\ref{tab:point_estimate} The full-width half-maximum (FWHM) of the SNR distribution was then used to determine the uncertainty on the coalescence times $t_c$ for each interferometer, shown in Table~\ref{tab:tcs}. The SNR distributions for each interferometer are shown in Fig.~\ref{fig:snr_distributions}. The relative time delays for the interferometer pairs HL, HV, and VL are shown in Table~\ref{tab:tds}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|c}
+    Parameter & Point estimate \\
+    \hline
+    RA ($\alpha$, rad) & 1.75 \\
+    Dec ($\delta$, rad) & -1.05 \\
+    Polarisation angle ($\psi$, rad) & 0.06 \\
+    \end{tabular}
+    \caption{Point estimates of the RA, Dec, and polarisation angle $\psi$ parameters for the GW source. The RA and Dec are in radians.}
+    \label{tab:point_estimate}
+\end{table}
 
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/SNR_HLV.png}
@@ -95,8 +108,6 @@ As the antenna response from each interferometer depends on the assumed sky area
     \label{tab:tcs}
 \end{table}
 
-The relative time delays for the interferometer pairs HL, HV, and VL are shown in Table~\ref{tab:tds}.
-
 \begin{table}[h]
     \centering
     \begin{tabular}{cc}
@@ -109,8 +120,8 @@ The relative time delays for the interferometer pairs HL, HV, and VL are shown i
     \label{tab:tds}
 \end{table}
 
-It makes sense to consider V1 separately from H1 and L1 because H1 and L1 LIGO are located in the United States and are managed by the LIGO Scientific Collaboration while V1 is located in Italy and managed by the European Gravitational Observatory \citep{LIGO2015, Acernese}. The different geographical locations as well as the independent design and management, means that V1 will provide dissimilar time delays compared to H1 and L1 as well as different antenna responses to sky areas. Additionally, the V1 interferometer can also provide additional independent confirmation of a GW signal. This allows for better triangulation of the GW source location and improved sky localization beyond what is possible with just the HL pair.
-
+It makes sense to consider V1 separately from H1 and L1 because H1 and L1 LIGO are located in the United States and are managed by the LIGO Scientific Collaboration while V1 is located in Italy and managed by the European Gravitational Observatory \citep{LIGO2015, Acernese_2014}. The different geographical locations as well as the independent design and management, means that V1 will provide dissimilar time delays compared to H1 and L1 as well as different antenna responses to sky areas. Additionally, the V1 interferometer can also provide additional independent confirmation of a GW signal. This allows for better triangulation of the GW source location and improved sky localization beyond what is possible with just the HL pair.
+\clearpage
 \subsection{Sky map}
 \label{sec:skymap_mf}
 Using the relative time delays and their uncertainties, as well as the known location of each interferometer on the Earth, the direction to the GW source can be estimated. This was done by creating a time delay map for the interferometer pairs using the \texttt{time\_delay\_from\_geocenter} method from \texttt{bilby}. Then, by comparing the delay map to the calculated time delays from Sec~\ref{sec:tc}, a probability map was calculated using Eq.~\ref{eq:prob}:
@@ -120,17 +131,15 @@ Using the relative time delays and their uncertainties, as well as the known loc
     \label{eq:prob}
 \end{equation}
 
-where $D^i$ is the delay map for each interferometer pair, $t_d^i$ is the calculated time delay for each interferometer pair, and $\sigma^i$ is the uncertainty on the time delay for each interferometer pair. The resulting map for the HL pair is shown in Fig.~\ref{fig:skymap_hl_mf}. As seen in the figure, the likely sky area of the GW source is quite large and uncertain, covering 8472.82 $\mathrm{deg}^2$, or about 20.54\% of the sky.
+where $D^i$ is the delay map for each interferometer pair, $t_d^i$ is the calculated time delay for each interferometer pair, and $\sigma^i$ is the uncertainty on the time delay for each interferometer pair. The resulting map for the HL pair is shown in Fig.~\ref{fig:skymap_hl_mf}. As seen in the figure, the likely sky area of the GW source is quite large and uncertain, covering 8472.82 $\mathrm{deg}^2$, or about 20.54\% of the sky. 
+
+When including the Virgo V1 interferometer and thus the HV and VL pairs, the uncertainty on the sky area is reduced to 0.85\% of the sky, or 351.39 $\mathrm{deg}^2$. The resulting sky map showing all three interferometer pair likely areas are shown in Fig.~\ref{fig:skymap_hlv_mf}. The reduction in likely sky area and thus improvement of the localization of the GW source due to the inclusion of the Virgo V1 interferometer is 95.85\%. This improvement is because as V1 is located in Italy while H1 and L1 are located in the United States, the differences in signal arrival times allows for better triangulation of the GW source location.
 
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/detector_skymap_HL.png}
     \caption{Probability sky map for the HL interferometer pair using matched filtering. The color scale shows the probability of the GW source being in each sky area.}
     \label{fig:skymap_hl_mf}
 \end{figure}
-
-When including the Virgo V1 interferometer and thus the HV and VL pairs, the uncertainty on the sky area is reduced to 0.85\% of the sky, or 351.39 $\mathrm{deg}^2$. The resulting sky map showing all three interferometer pair likely areas are shown in Fig.~\ref{fig:skymap_hlv_mf}. The reduction in likely sky area and thus improvement of the localization of the GW source due to the inclusion of the Virgo V1 interferometer is 95.85\%.
-
-This improvement is because V1 provides additional constraints on the relative time delays. As V1 is located in Italy while H1 and L1 are located in the United States, the differences in signal arrival times allows for better triangulation of the GW source location.
 
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/detector_skymap_intersection.png}
@@ -166,16 +175,22 @@ The priors used for the analysis were chosen to be uniform for RA, solid angle (
     Dec ($\delta$, rad) & $\arcsin(-\frac{\delta}{2}-1)$ \\
     Polarisation angle ($\psi$, rad) & [0, $2\pi$] \\
     Geocentric coalescence time from 1126259460.4 ($t_c^{geo}$, s) & [0, 4] \\
-    Luminosity distance ($D_L$, Mpc) & [$10^{-4}$, $10^5$] \\
+    Luminosity distance ($D_L$, Gpc) & [$10^{-4}$, $10^5$] \\
     \end{tabular}
-    \caption{Prior distributions for each gravitational-wave parameter. The RA and Dec are in radians, the polarisation angle is in radians, the coalescence time is in seconds, and the luminosity distance is in Gigaparsecs. The Dec prior is calculated using the inverse sine function to ensure that the prior is uniform over the solid angle.}
+    \caption{Prior distributions for each gravitational-wave parameter. The RA, Dec, and polarisation angle are in radians, the coalescence time is in seconds, and the luminosity distance is in Gigaparsecs. The Dec prior is calculated using the inverse sine function to ensure that the prior is uniform over the solid angle.}
     \label{tab:priors}
 \end{table}
-
 
 Using the \texttt{dynesty} package to perform the nested sampling, the posterior distributions for the parameters were calculated. The posterior results for the HL interferometer pair after resampling for equal weight are shown in Fig.~\ref{fig:posterior_hl}. Note that in this projection, RA increases leftward, 'flipping' the map compared to Section~\ref{sec:skymap_mf}. The Mollweide projected RA and Dec posteriors are shown in Fig.~\ref{fig:sky_hl}. As seen, the posterior RA distribution is quite wide, encompassing around 60 ${\deg}^2$ while the posterior Dec distribution is more constrained, encompassing around 30 ${\deg}^2$. 
 
 The median location of the source is at RA = $2.477^{+0.164}_{-0.510}$ rad and Dec = $-1.123^{+0.214}_{-0.137}$ rad. The 1D marginalised distribution of the luminosity distance $D_L$ is shown in Fig.~\ref{fig:luminosity_distance}. The median luminosity distance is $1.02 \pm 0.03$ Gpc.
+
+\begin{figure}
+    \includegraphics[width=\columnwidth, keepaspectratio]{../figures/corner_HL.png}
+    \caption{Corner plot showing the posterior distributions for the HL interferometer pair obtained via Bayesian inference. From left to right, the parameters are the right ascension ($\alpha$), declination ($\delta$), polarisation angle ($\psi$), geocentric coalescence time ($t_c^{geo}$), and luminosity distance ($D_L$). The 2D contour plots show the 1$\sigma$ (68.3\%) and 2$\sigma$ (95.4\%) credible regions. The diagonal plots display the marginalized posterior distributions for each parameter, with vertical lines indicating the 5th, 50th (median), and 95th percentiles.}
+    \label{fig:posterior_hl}
+\end{figure}
+
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/posterior_map_HL.png}
     \caption{Mollweide projection of the sky showing the normalised posterior distribution for the HL interferometer pair. The color scale shows the probability density of the GW source being in each sky area. The red dot indicates the median position of the source.}
@@ -184,11 +199,14 @@ The median location of the source is at RA = $2.477^{+0.164}_{-0.510}$ rad and D
 
 Fig.~\ref{fig:hl_compare} compares the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. It is clear that the Bayesian inference method provides a much more precise localization of the GW source, with the resampled posterior distribution enclosing only 0.23\% of the sky, or 93.16 $\mathrm{deg}^2$.
 
+\begin{landscape}
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/radec_posterior_HL.png}
     \caption{Left: RA and Dec posterior distribution from the Bayesian inference method with 1D marginalisations of the RA and Dec coordinates. The shaded area (purple) indicates the 68\% credible interval while the dotted lines indicate the median of both the RA and Dec distributions. Right: Comparison of the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. The grey contour shows the matched filtering enclosed area while the orange scatter points show the posterior distribution from the Bayesian inference method. The blue star indicates the median location of the source.}
     \label{fig:hl_compare}
 \end{figure}
+\end{landscape}
+
 \clearpage
 Including the Virgo V1 interferometer in the Bayesian inference method, the corner plot of the posterior distributions is shown in Fig.~\ref{fig:posterior_hlv}. The Mollweide projected RA and Dec posteriors of the resampled distribution are in Fig.~\ref{fig:sky_hlv}. The 1D marginalised distribution of the luminosity distance $D_L$ is shown in Fig.~\ref{fig:luminosity_distance}. The median luminosity distance is $1.02 \pm 0.03$ Gpc, which is consistent with the HL interferometer pair result. Fig.~\ref{fig:hlv_compare} compares the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. 
 
@@ -198,7 +216,7 @@ Table~\ref{tab:areas} summarises the sky areas for the matched filtering and Bay
 
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/corner_HLV.png}
-    \caption{Corner plot showing the posterior distributions for the HL and V1 interferometer pair obtained via Bayesian inference. From left to right, the parameters are the right ascension ($\alpha$), declination ($\delta$), polarisation angle ($\psi$), geocentric coalescence time ($t_c^{geo}$), and luminosity distance ($D_L$). The 2D contour plots show the 1$\sigma$ (68.3\%) and 2$\sigma$ (95.4\%) credible regions. The diagonal plots display the marginalized posterior distributions for each parameter, with vertical lines indicating the 5th, 50th (median), and 95th percentiles.}
+    \caption{Corner plot showing the posterior distributions for all interferometer pairs obtained via Bayesian inference. From left to right, the parameters are the right ascension ($\alpha$), declination ($\delta$), polarisation angle ($\psi$), geocentric coalescence time ($t_c^{geo}$), and luminosity distance ($D_L$). The 2D contour plots show the 1$\sigma$ (68.3\%) and 2$\sigma$ (95.4\%) credible regions. The diagonal plots display the marginalized posterior distributions for each parameter, with vertical lines indicating the 5th, 50th (median), and 95th percentiles.}
     \label{fig:posterior_hlv}
 \end{figure}
 
@@ -208,11 +226,13 @@ Table~\ref{tab:areas} summarises the sky areas for the matched filtering and Bay
     \label{fig:sky_hlv}
 \end{figure}
 
+\begin{landscape}
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/radec_posterior_HLV.png}
     \caption{Left: RA and Dec posterior distribution from the Bayesian inference method with 1D marginalisations of the RA and Dec coordinates. The shaded area (purple) indicates the 68\% credible interval while the dotted lines indicate the median of both the RA and Dec distributions. Right: Comparison of the posterior distribution of the RA and Dec coordinates from the Bayesian inference method to the matched filtering method. The grey contour shows the matched filtering enclosed area while the orange scatter points show the posterior distribution from the Bayesian inference method. The blue star indicates the median location of the source.}
     \label{fig:hlv_compare}
 \end{figure}
+\end{landscape}
 
 \begin{figure}
     \includegraphics[width=\columnwidth, keepaspectratio]{../figures/dl_posterior.png}
@@ -240,11 +260,11 @@ Table~\ref{tab:areas} summarises the sky areas for the matched filtering and Bay
     Parameter & \multicolumn{2}{c}{Interferometers} \\
     & H1 \& L1 & H1 \& L1 \& V1 \\
     \hline
-    RA ($\alpha$, rad) & $2.477^{+0.164}_{-0.510}$ & $2.321^{+0.046}_{-0.041}$ \\
-    Dec ($\delta$, rad) & $-1.123^{+0.214}_{-0.137}$ & $-1.195^{+0.017}_{-0.017}$ \\
-    Polarisation angle ($\psi$, rad) & $-0.629^{+0.534}_{-0.229}$ & $-0.462^{+0.061}_{-0.064}$ \\
-    Geocentric coalescence time ($t_c^{geo}$, s) & $1126259462.4^{+0.002}_{-0.001}$ & $1126259462.4^{+0.00}_{-0.00}$ \\
-    Luminosity distance ($D_L$, Gpc) & $1.039^{+0.075}_{-0.095}$ & $1.015^{+0.061}_{-0.054}$ \\
+    RA ($\alpha$, rad) & $2.5^{+0.2}_{-0.5}$ & $2.32^{+0.05}_{-0.04}$ \\
+    Dec ($\delta$, rad) & $-1.1^{+0.2}_{-0.1}$ & $-1.20^{+0.02}_{-0.02}$ \\
+    Polarisation angle ($\psi$, rad) & $-0.6^{+0.5}_{-0.2}$ & $-0.46^{+0.06}_{-0.06}$ \\
+    Geocentric coalescence time from 1126259460.400 ($t_c^{geo}$, s) & $2.00^{+0.002}_{-0.001}$ & $2.00^{+0.00}_{-0.00}$ \\
+    Luminosity distance ($D_L$, Gpc) & $1.04^{+0.08}_{-0.10}$ & $1.02^{+0.06}_{-0.05}$ \\
     \end{tabular}
     \caption{Summary of the median and 1$\sigma$ uncertainties for the parameters obtained from the Bayesian inference method for both the HL and HLV interferometer pairs. The RA and Dec are in radians, the polarisation angle is in radians, the geocentric coalescence time is in seconds, and the luminosity distance is in Gigaparsecs.}
     \label{tab:params}
@@ -280,9 +300,7 @@ First, the host galaxy is identified by cross-matching the GW source coordinates
     \label{tab:galaxies}
 \end{table}
 
-As only one galaxy was matched for the H1 \& L1 \& V1 interferometer pair, there was no need to rank the galaxies by likelihood of being the host galaxy. 
-
-Assuming that MGC+JN7U119 is the host galaxy, the redshift $z$ of the host galaxy is 0.226. Using this redshift as well as the median luminosity distance $D_L = 1.02 \pm 0.03$ Gpc from the H1 \& L1 \& V1 Bayesian inference method, the Hubble constant $H_0$ (km/s/Mpc)can be estimated using the following Eq.~\ref{eq:hubble}:
+As only one galaxy was matched for the H1 \& L1 \& V1 interferometer pair, there was no need to rank the galaxies by likelihood of being the host galaxy. Assuming that MGC+JN7U119 is the host galaxy, the redshift $z$ of the host galaxy is 0.226. Using this redshift as well as the median luminosity distance $D_L = 1.02 \pm 0.03$ Gpc from the H1 \& L1 \& V1 Bayesian inference method, the Hubble constant $H_0$ (km/s/Mpc)can be estimated using the following Eq.~\ref{eq:hubble}:
 
 \begin{equation}
     H_0 = \frac{c}{D_L}{z},
