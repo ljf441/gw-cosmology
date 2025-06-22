@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.5.30)  22 JUN 2025 23:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.5.30)  23 JUN 2025 00:05
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -670,17 +670,17 @@ Package pdftex.def Info: ../figures/radec_posterior_HL.png  used on input line
 (pdftex.def)             Requested size: 657.27872pt x 219.93733pt.
 
 [10 <../figures/radec_posterior_HL.png>]
-<../figures/corner_HLV.png, id=148, 845.3181pt x 864.831pt>
+<../figures/corner_HLV.png, id=148, 842.9091pt x 864.831pt>
 File: ../figures/corner_HLV.png Graphic file (type png)
 <use ../figures/corner_HLV.png>
 Package pdftex.def Info: ../figures/corner_HLV.png  used on input line 220.
-(pdftex.def)             Requested size: 398.4237pt x 407.6187pt.
-<../figures/posterior_map_HLV.png, id=149, 714.2685pt x 352.6776pt>
+(pdftex.def)             Requested size: 398.4237pt x 408.77997pt.
+<../figures/posterior_map_HLV.png, id=149, 714.2685pt x 346.4142pt>
 File: ../figures/posterior_map_HLV.png Graphic file (type png)
 <use ../figures/posterior_map_HLV.png>
 Package pdftex.def Info: ../figures/posterior_map_HLV.png  used on input line 2
 26.
-(pdftex.def)             Requested size: 398.4237pt x 196.72856pt.
+(pdftex.def)             Requested size: 398.4237pt x 193.23474pt.
  [11
 
 
@@ -750,7 +750,7 @@ type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol
 /usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (20 pages, 6383417 bytes).
+Output written on report.pdf (20 pages, 5917986 bytes).
 PDF statistics:
  328 PDF objects out of 1000 (max. 8388607)
  226 compressed objects within 3 object streams
