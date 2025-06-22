@@ -51,6 +51,8 @@ The report is located in the `report` folder and is named `report.pdf`.
 Auto-generation tools were used as follows:
 - Parsing error messages throughout the project.
 - Assistance in formatting the report in $\LaTeX$, specifically with tables and referencing.
+- Adding docstrings to equations.
+- Creating the code to invert the luminosity distance equation for Part 3 of the coursework.
 
 Auto-generation tools were not used elsewhere, for code generation, writing, or otherwise.
 
