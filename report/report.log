@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.5.30)  23 JUN 2025 00:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.5.30)  9 JUL 2025 20:53
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -648,11 +648,11 @@ ection.png>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../figures/corner_HL.png, id=109, 842.9091pt x 864.831pt>
+<../figures/corner_HL.png, id=109, 844.3545pt x 864.831pt>
 File: ../figures/corner_HL.png Graphic file (type png)
 <use ../figures/corner_HL.png>
 Package pdftex.def Info: ../figures/corner_HL.png  used on input line 191.
-(pdftex.def)             Requested size: 398.4237pt x 408.77997pt.
+(pdftex.def)             Requested size: 398.4237pt x 408.08057pt.
 <../figures/posterior_map_HL.png, id=110, 714.2685pt x 359.1819pt>
 File: ../figures/posterior_map_HL.png Graphic file (type png)
 <use ../figures/posterior_map_HL.png>
@@ -675,12 +675,12 @@ File: ../figures/corner_HLV.png Graphic file (type png)
 <use ../figures/corner_HLV.png>
 Package pdftex.def Info: ../figures/corner_HLV.png  used on input line 220.
 (pdftex.def)             Requested size: 398.4237pt x 408.77997pt.
-<../figures/posterior_map_HLV.png, id=149, 714.2685pt x 346.4142pt>
+<../figures/posterior_map_HLV.png, id=149, 714.2685pt x 352.9185pt>
 File: ../figures/posterior_map_HLV.png Graphic file (type png)
 <use ../figures/posterior_map_HLV.png>
 Package pdftex.def Info: ../figures/posterior_map_HLV.png  used on input line 2
 26.
-(pdftex.def)             Requested size: 398.4237pt x 193.23474pt.
+(pdftex.def)             Requested size: 398.4237pt x 196.86293pt.
  [11
 
 
@@ -694,11 +694,11 @@ Package pdftex.def Info: ../figures/radec_posterior_HLV.png  used on input line
  233.
 (pdftex.def)             Requested size: 657.27872pt x 219.93733pt.
  [14 <../figures/radec_posterior_HLV.png>]
-<../figures/dl_posterior.png, id=176, 1226.6628pt x 502.7583pt>
+<../figures/dl_posterior.png, id=176, 1208.1135pt x 502.9992pt>
 File: ../figures/dl_posterior.png Graphic file (type png)
 <use ../figures/dl_posterior.png>
 Package pdftex.def Info: ../figures/dl_posterior.png  used on input line 240.
-(pdftex.def)             Requested size: 398.4237pt x 163.29477pt.
+(pdftex.def)             Requested size: 398.4237pt x 165.8828pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -750,7 +750,7 @@ type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol
 /usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (20 pages, 5917986 bytes).
+Output written on report.pdf (20 pages, 5905195 bytes).
 PDF statistics:
  328 PDF objects out of 1000 (max. 8388607)
  226 compressed objects within 3 object streams
